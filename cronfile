@@ -1,0 +1,1 @@
+0 12 * * * /usr/local/bin/python /app/daily_pipeline.py >> /app/daily_pipeline-cron.log 2>&1
