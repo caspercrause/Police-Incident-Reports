@@ -6,7 +6,7 @@ import dlt
 from dlt.destinations.impl.bigquery.bigquery_adapter import bigquery_adapter
 import pandas as pd
 # Set up authentication
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'service_acc.json' # YOUR SERVCE ACCOUNT HERE. Rename to `service_acc.json` to ensure reproducibility
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'service_acc.json' # YOUR SERVICE ACCOUNT HERE. Rename to `service_acc.json` to ensure reproducibility
 
 # Unauthenticated client only works with public data sets. Note 'None'
 # In place of application token, and no username or password:

@@ -1,5 +1,5 @@
 pandas==2.2.1
 sodapy==2.2.0
-dlt[bigquery]>=0.3.25re
+dlt[bigquery]>=0.3.25
 google-cloud-bigquery-storage==2.24.0
 enlighten==1.12.4

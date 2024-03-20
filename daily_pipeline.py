@@ -3,9 +3,10 @@ import dlt
 from dlt.destinations.impl.bigquery.bigquery_adapter import bigquery_adapter
 import pandas as pd
 from datetime import datetime as dt
+from dateutil.relativedelta import relativedelta
 
-# Create a string based on the date of today and floor it to the beginning of the month
-CurrentMonth = dt.now().strftime('%Y-%m-01T00:00:00.000')
+# Create a string based on the date of today and floor it to the beginning of the previous month
+CurrentMonth = (dt.now() - relativedelta(months=1)).strftime('%Y-%m-01T00:00:00.000')
 
 # Unauthenticated client only works with public data sets. Note 'None'
 # in place of application token, and no username or password:
@@ -51,4 +52,4 @@ finally:
 
         print(' ** Finished uploading')
     else:
-        print(' ** Now new records could be uploaded')
+        print(' ** No new records could be uploaded')
