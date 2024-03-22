@@ -81,4 +81,4 @@ docker build -t incidents .
 docker run --name mycontainer --privileged -d incidents
 ```
 
-These two commands will have started the pipelines and data should show up in biquery.
+These two commands will have started the pipelines and data should show up in `bigquery`.
