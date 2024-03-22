@@ -17,6 +17,10 @@ dataset_id = "wg3w-h783"
 where_clause = f"report_datetime > '{CurrentMonth}'"
 generator = client.get_all(dataset_id, where = where_clause)
 
+# Create a string for log output:
+Now_str = dt.now().strftime('%a, %b %d, %Y at %H:%M:%S')
+
+# Define dlt pipeline:
 pipeline = dlt.pipeline(
     pipeline_name="police_incidents", destination="bigquery", dataset_name="incidents", progress='enlighten'
     )
@@ -30,7 +34,7 @@ try:
     script_failure = False
     print(f' ** Found {len(data)} rows.')
 except:
-    print(" ** Something went wrong with data retrieval step")
+    print(f" ** Something went wrong with data retrieval step on {Now_str}")
     script_failure = True
 
 finally:
@@ -50,6 +54,6 @@ finally:
         staging='filesystem'
         )
 
-        print(' ** Finished uploading')
+        print(f' ** Finished uploading on {Now_str}')
     else:
-        print(' ** No new records could be uploaded')
+        print(f' ** No new records could be uploaded on {Now_str}')
