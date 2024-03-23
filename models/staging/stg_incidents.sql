@@ -46,8 +46,16 @@ with
         order by report_datetime asc
     
     -- dbt build --select <model_name> --vars '{'is_test_run': 'false'}'
+<<<<<<< HEAD
     {% if var('is_test_run', default=false) %}
 
     limit 100
 
     {% endif %}
+=======
+    {% if var('is_test_run', default=true) %}
+
+    limit 100
+
+    {% endif %}
+>>>>>>> 6db06845488b355aa4f172e26671115a67a0b0a9
