@@ -65,6 +65,20 @@ Add IMAGE
 TODO
 
 ## To recreate
-To recreate this you can either deploy it on a virtual machine, locally in a docker container, GitHub Code Spaces
+To recreate this you can either deploy it on a virtual machine, locally in a docker container or on GitHub Code Spaces
 
-Provide Instructions here🚀
+🚀        🚀        🚀
+
+Prior to running this you will need to create a bucket in google big query storage and set up your `secrets.toml` file and you will need to have a service account and copy it into the current working directory. Rename it to `service_acc.json` to ensure reproducibility. You also need to give the name of that bucket you created in line `37` of `upload_to_storage.py`
+1. Firstly you need to build a docker image. I called it `incidents`. Builidng this image takes around 10 - 15 minutes because of the `upload_to_storage.py` script that is executed by the `Dockerfile` so please be patient 🙂
+```
+docker build -t incidents .
+```
+
+2. Next you need to run a container. This container will schedule a script via `cron` to run daily. This daily pipeline adds new incident reports and updates existing records for the last two months. The reasoning behind this is that, occasionally, case details are entered incorrectly and is updated. To ensure that these changes are correctly captured in my pipeline I use `dlt` to upsert entries for the previous month until whatever the date of today is
+
+```
+docker run --name mycontainer --privileged -d incidents
+```
+
+These two commands will have started the pipelines and data should show up in `bigquery`.
