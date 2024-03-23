@@ -1,4 +1,3 @@
-
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
@@ -36,4 +35,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
+<<<<<<< HEAD
   police_incident_reports:
+=======
+  police_incident_reports:
+>>>>>>> 6be3c2279b4d16cd3db41e1501600588327ec6dd
