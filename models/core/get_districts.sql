@@ -15,6 +15,7 @@ from {{ ref('supervisor_districts') }}
     )
 }}
 
+<<<<<<< HEAD
 
 with 
 
@@ -63,3 +64,7 @@ with
 
     {% endif %}
 >>>>>>> 6db06845488b355aa4f172e26671115a67a0b0a9
+=======
+select sup_name as supervisor_name, cast (sup_dist as integer) as supervisor_district
+from {{ ref('get_districts') }}
+>>>>>>> 2708e904945a93d2bca1caa465341d66e6781c6a
