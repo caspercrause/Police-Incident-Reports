@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: staging
+    database: project-ast-292014
+    schema: incidents
+    tables:
+      - name: incident_table
