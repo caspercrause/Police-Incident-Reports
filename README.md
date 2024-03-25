@@ -77,6 +77,11 @@ Data is pulled from a data warehouse and a single `csv` file linking police supe
 ## Dashboard
 The data can be viewed by clicking [here](https://lookerstudio.google.com/reporting/c3d62dc9-e6b2-4f17-8b23-91ccc176a36c/page/6zXD)
 
+## CI/CD
+To ensure production run remains unbroken I've included `CI/CD` pipeline within `dbt` which checks the code from the development branch we are requesting to merge to `main` and only after it passes all tests will the pull request into `main` be approved.
+
+[![Image](https://github.com/caspercrause/Police-Incident-Reports/blob/master/images/ci-cd-checks.png)](https://github.com/caspercrause/Police-Incident-Reports/blob/master/images/ci-cd-checks.png)
+
 ## To recreate
 To recreate this you can either deploy it on a virtual machine, locally in a docker container or on GitHub Code Spaces
 
