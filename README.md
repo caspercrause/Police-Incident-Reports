@@ -62,6 +62,18 @@ This means we will not know the upfront cost benefits of applying clustering to 
 ## Architecture
 [![Image](https://github.com/caspercrause/Police-Incident-Reports/blob/master/images/architecture.png)](https://github.com/caspercrause/Police-Incident-Reports/blob/master/images/architecture.png)
 
+## Lineage
+Data lineage provides a holistic view of how data moves through an organization. At a high level, a data lineage system typically provides data teams and consumers with one or both of the following resources:
+
+ - A visual graph (DAG) of sequential workflows at the data set or column level
+ - A data catalog of data asset origins, owners, definitions, and policies
+
+The `dbt` lineage  for this project looks as follows:
+
+[![Image](https://github.com/caspercrause/Police-Incident-Reports/blob/master/images/dbt-lineage.png)](https://github.com/caspercrause/Police-Incident-Reports/blob/master/images/dbt-lineage.png)
+
+Data is pulled from a data warehouse and a single `csv` file linking police supervisors to certain police districs. These two models are then transformed and finally joined. `dbt` has a daily scheduled production run to fetch new data from the `BigQuery` data warehouse, transform the data according to the lineage provided above and feed transformed data to a looker data studio dashboard.
+
 ## Dashboard
 The data can be viewed by clicking [here](https://lookerstudio.google.com/reporting/c3d62dc9-e6b2-4f17-8b23-91ccc176a36c/page/6zXD)
 
