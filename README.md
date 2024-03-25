@@ -24,7 +24,7 @@ In this data engineering project, the goal is to empower law enforcement agencie
 All communication with the API is done through HTTPS, and errors are communicated through HTTP response codes. The San Francisco Data API is powered by [Socrata](https://dev.socrata.com/)
 
 
-They have python package available that is utiltlized in the code to easily work with JSON data
+They have a python package available that is utiltlized in the code to easily work with JSON data
 
 ## Technologies
  - GitHub - repository to host source code
@@ -78,7 +78,7 @@ Data is pulled from a data warehouse and a single `csv` file linking police supe
 The data can be viewed by clicking [here](https://lookerstudio.google.com/reporting/c3d62dc9-e6b2-4f17-8b23-91ccc176a36c/page/6zXD)
 
 ## CI/CD
-To ensure production run remains unbroken I've included `CI/CD` pipeline within `dbt` which checks the code from the development branch we are requesting to merge to `main` and only after it passes all tests will the pull request into `main` be approved.
+To ensure production run remains unbroken I've included a `CI/CD` pipeline within `dbt` which checks the code from the development branch we are requesting to merge to `main` and only after it passes all tests will the pull request into `main` be approved.
 
 [![Image](https://github.com/caspercrause/Police-Incident-Reports/blob/master/images/ci-cd-checks.png)](https://github.com/caspercrause/Police-Incident-Reports/blob/master/images/ci-cd-checks.png)
 
