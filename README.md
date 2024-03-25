@@ -16,7 +16,8 @@ The pipeline code is located on a virtual private server that is scheduled to be
 This is the final project for the DataTalks.Club Data Engineering Zoomcamp. It's a free, practical, 10-week long course about the main concepts in Data Engineering.
 
 ## Problem Statement
-TODO
+In this data engineering project, the goal is to empower law enforcement agencies with actionable insights to optimize the deployment of their resources for enhancing community safety. By leveraging data analytics techniques, the aim is to detect and analyze crime patterns across various neighborhoods of San Francisco. Through the aggregation and processing of key metrics, alongside the generation of heat maps illustrating crime hotspots on specific days of the week, I seek to provide law enforcement officers with the necessary tools to make informed decisions. The objective is to develop robust data pipelines and infrastructure that enable the efficient collection, storage, processing, and visualization of crime data. Ultimately, these efforts can help facilitate the implementation of targeted strategies aimed at reducing crime rates and improving overall public safety.
+
 
 
 ## Data
@@ -59,10 +60,10 @@ bigquery_adapter(
 This means we will not know the upfront cost benefits of applying clustering to our data because there are no partitions. But since I will be aggregating the data based on multiple fields, clustering will be the better option where as with partitioning you generally filter on a single field.
 
 ## Architecture
-Add IMAGE
+[![Image](https://github.com/caspercrause/Police-Incident-Reports/blob/master/images/architecture.png)](https://github.com/caspercrause/Police-Incident-Reports/blob/master/images/architecture.png)
 
 ## Dashboard
-TODO
+The data can be viewed by clicking [here](https://lookerstudio.google.com/reporting/c3d62dc9-e6b2-4f17-8b23-91ccc176a36c/page/6zXD)
 
 ## To recreate
 To recreate this you can either deploy it on a virtual machine, locally in a docker container or on GitHub Code Spaces
