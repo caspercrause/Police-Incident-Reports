@@ -50,12 +50,13 @@ Please see [these](https://dlthub.com/docs/dlt-ecosystem/destinations/bigquery) 
  ## Partitioning and clustering
   I will be using clustering because the number of columns in this data set is large and the querying will frequently be aggregated against certain fields
 
-  Since I will be making a lot of queries based on the `Year`, `Incident Category`, and `Police District` I have created a python code snippet to cluster on these particular fields
+  Since I will be making a lot of queries based on the `Year`, `Incident Category`, `Neighborhood` and `Supervisor Name` I have created a `dbt` code snippet to cluster on these particular fields. View the full code [here](https://github.com/caspercrause/Police-Incident-Reports/blob/master/models/core/facts_reports.sql)
 
   ```
-bigquery_adapter(
-    data, cluster=["incident_year", "incident_category", "police_district"]
+{{ config(materialized="table",
+cluster_by = ["year", "incident_category", "neighborhood", "supervisor_name"],
 )
+ }}
   ```
 This means we will not know the upfront cost benefits of applying clustering to our data because there are no partitions. But since I will be aggregating the data based on multiple fields, clustering will be the better option where as with partitioning you generally filter on a single field.
 
