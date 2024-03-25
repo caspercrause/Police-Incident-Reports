@@ -1,6 +1,6 @@
 # Police Department Incident Reports: 2018 to Present
 
-This dataset includes incident reports that have been filed as of January 1, 2018. These reports are filed by officers or self-reported by members of the public using SFPD’s online reporting system. The reports are categorized into the following groups based on how the report was received and the type of incident. 
+This dataset includes incident reports that have been filed as of January 1, 2018. These reports are filed by officers or self-reported by members of the public using SFPD’s online reporting system.
 
 ## Disclaimer: 
 
@@ -34,7 +34,7 @@ They have a python package available that is utilized in the code to easily work
 - dbt core for data tranformation
 - Google Cloud: Google Cloud storage, BigQuery, Compute engine (VM)
 
-## Repo content
+## Repository content
  - python script called `upload_to_storage.py` to upload historical data to google cloud storage
  - python script called `daily_pipeline.py` to retrieve daily new cases from the San Fransisco Data API
  - service account json file (this is not pushed to GitHub)
@@ -73,7 +73,7 @@ The `dbt` lineage  for this project looks as follows:
 
 [![Image](https://github.com/caspercrause/Police-Incident-Reports/blob/master/images/dbt-lineage.png)](https://github.com/caspercrause/Police-Incident-Reports/blob/master/images/dbt-lineage.png)
 
-Data is pulled from a data warehouse and a single `csv` file linking police supervisors to certain police districts. These two models are then transformed and finally joined. `dbt` has a daily scheduled production run to fetch new data from the `BigQuery` data warehouse, transform the data according to the lineage provided above and feed transformed data to a looker data studio dashboard.
+Data is pulled from a data warehouse and a single `csv` file linking police supervisors to certain police districts. These two models are then transformed and finally joined. `dbt` has a daily scheduled production run to fetch new data from the `BigQuery` data warehouse, transform the data according to the lineage provided above and feed transformed data to a looker studio dashboard.
 
 ## Dashboard
 The data can be viewed by clicking [here](https://lookerstudio.google.com/reporting/c3d62dc9-e6b2-4f17-8b23-91ccc176a36c/page/6zXD)
