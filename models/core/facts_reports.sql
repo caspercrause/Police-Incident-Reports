@@ -1,19 +1,13 @@
-{{
-    config(
-        materialized='table'
-    )
-}}
-
-with reporting_data_clean as (
-    select *
-    from {{ ref('stg_incidents') }}
-),
-supervisors as (
-    select *, 
-    from {{ ref('get_districts') }}
+{{ config(materialized="table",
+cluster_by = ["year", "incident_category", "neighborhood", "supervisor_name"],
 )
+ }}
 
-select 
+with
+    reporting_data_clean as (select * from {{ ref("stg_incidents") }}),
+    supervisors as (select *, from {{ ref("get_districts") }})
+
+select
     reporting_data_clean.incident_id,
     reporting_data_clean.incident_number,
     reporting_data_clean.incident_datetime,
@@ -33,5 +27,5 @@ select
     r.supervisor_name,
     reporting_data_clean.coordinates
 from reporting_data_clean
-inner join supervisors as r
-on reporting_data_clean.supervisor_district = r.supervisor_district
+inner join
+    supervisors as r on reporting_data_clean.supervisor_district = r.supervisor_district
