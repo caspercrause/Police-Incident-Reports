@@ -84,7 +84,7 @@ To ensure production run remains unbroken I have included a `CI/CD` pipeline wit
 [![Image](https://github.com/caspercrause/Police-Incident-Reports/blob/master/images/ci-cd-checks.png)](https://github.com/caspercrause/Police-Incident-Reports/blob/master/images/ci-cd-checks.png)
 
 ## To recreate
-To recreate, this you can either deploy it on a virtual machine, locally in a docker container or on GitHub Code Spaces
+To recreate this, you can either deploy it on a virtual machine, locally in a docker container or on GitHub Code Spaces
 
 🚀        🚀        🚀
 
